@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Iris Flower Classifier</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      padding: 40px;
+    }
+
+    .container {
+
+
+
+      max-width: 400px;
+
+
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input[type=number] {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      padding: 10px;
+      background: #007BFF;
+      color: white;
+      border-radius: 7px;
+
+      margin-top: 10px;
+    }
+
+    .result {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 15px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Iris Flower predict</h2>
+    <form action="/predict" method="POST">
+      <label>Sepal Length:<input type="number" step="any" name="sl" required></label>
+
+      <label>Sepal Width:
+        <input type="number" step="any" name="sw" required></label>
+
+      <label>Petal Length:
+        <input type="number" step="any" name="pl" required></label>
+
+      <label>Petal Width:
+        <input type="number" step="any" name="pw" required></label>
+
+      <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+    <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+  </div>
+</body>
+
+</html>
